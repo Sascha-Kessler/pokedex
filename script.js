@@ -1,28 +1,30 @@
 let pokemonResults = [];
+let pokemonLoad = []
 let mainType = [];
-
+let offset = 0;
 async function init() {
   await onloadFunc();
 }
 
-async function onloadFunc() {
-  let details = await getAllPokemonDetails();
+async function onloadFunc(limit, offset) {
+  let details = await getAllPokemonDetails(limit = 20, offset);
   pokemonResults = details;
-  console.log(pokemonResults);   //muss zum schluss entfernt werden!!!
+  pokemonLoad.push(...pokemonResults)
+  console.log(pokemonLoad);   //muss zum schluss entfernt werden!!!
   renderPokemonCards();
 }
 
-function renderPokemonCards(limit = 21) {
+function renderPokemonCards() {
   let pokemon = document.getElementById("pokemon_card");
-  pokemon.innerHTML = "";
-  for (let index = 0; index < limit; index++) {
+  
+  for (let index = 0; index < pokemonLoad.length; index++) {
     setPokemonCardColour(index);
     pokemon.innerHTML += getPokemonCardTemplate(index);
   }
 }
 
-async function getAllPokemonDetails() {
-  let response = await fetch(`${BASE_URL}`);
+async function getAllPokemonDetails(limit = 20, offset) {
+  let response = await fetch(`${BASE_URL}?limit=${limit}&offset=${offset}`);
   let responseToJson = await response.json();
   let pokemonResults = responseToJson.results;
   let details = [];
@@ -36,8 +38,8 @@ async function getAllPokemonDetails() {
 }
 
 function setPokemonCardColour(index) {
-  if (pokemonResults.length > 0) {
-    mainType = pokemonResults[index].types[0].type.name;
+  if (pokemonLoad.length > 0) {
+    mainType = pokemonLoad[index].types[0].type.name;
   } else {
     mainType = "normal";
   }
@@ -46,4 +48,9 @@ function setPokemonCardColour(index) {
 
 function getTypeClass(typeName) {
   return `pokemon_type_${typeName}`;
+}
+
+async function loadMorePokemon() {
+  offset = offset+20
+await  onloadFunc(limit = 20, offset);
 }
