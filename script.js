@@ -1,5 +1,6 @@
 let pokemonResults = [];
 let mainType = [];
+
 async function init() {
   await onloadFunc();
 }
