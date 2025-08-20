@@ -1,4 +1,4 @@
-let pokemonResults = [];
+
 let pokemonLoad = []
 let mainType = [];
 let offset = 0;
@@ -7,17 +7,18 @@ async function init() {
 }
 
 async function onloadFunc(limit, offset) {
+  const startIndex = pokemonLoad.length;
   let details = await getAllPokemonDetails(limit = 20, offset);
-  pokemonResults = details;
-  pokemonLoad.push(...pokemonResults)
+  
+  pokemonLoad.push(...details)
   console.log(pokemonLoad);   //muss zum schluss entfernt werden!!!
-  renderPokemonCards();
+  renderPokemonCards(startIndex);
 }
 
-function renderPokemonCards() {
+async function renderPokemonCards(startIndex = 0) {
   let pokemon = document.getElementById("pokemon_card");
   
-  for (let index = 0; index < pokemonLoad.length; index++) {
+  for (let index = startIndex; index < pokemonLoad.length; index++) {
     setPokemonCardColour(index);
     pokemon.innerHTML += getPokemonCardTemplate(index);
   }
