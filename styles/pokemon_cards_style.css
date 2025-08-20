@@ -1,0 +1,40 @@
+.pokemon_cards_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 1920px;
+}
+
+.pokemon_card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 12px;
+    height: 325px;
+    width: 230px;
+    gap: 50px;
+    padding-top: 24px;
+}
+
+.pokemon_type_grass {
+    background-color: green;
+}
+
+.pokemon_type_fire {
+    background-color: red;
+}
+
+.pokemon_type_water {
+    background-color: blue;
+}
+
+.pokemon_type_bug {
+    background-color: #bfc12c;
+}
+
+.pokemon_type_normal {
+    background-color: #b7b79b;
+}
