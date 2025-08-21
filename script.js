@@ -59,6 +59,6 @@ function loadingSpinner() {
   document.getElementById("loader").classList.toggle("d_none");
 }
 
-function capitalizeFirstLetter(str = "") {
+function capitalizeFirstNameLetter(str = "") {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
