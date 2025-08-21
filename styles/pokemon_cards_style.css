@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    width: 1920px;
+    padding-bottom: 24px;
 }
 
 .pokemon_card {
@@ -17,6 +17,12 @@
     width: 230px;
     gap: 50px;
     padding-top: 24px;
+}
+
+.pokemon_card_header {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
 }
 
 .pokemon_type_grass {

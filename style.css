@@ -1,4 +1,15 @@
 #content {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 1440px;
+    margin: auto;
+}
+
+.header{
+    text-align: center;
+}
+
+.load_more_btn {
+    margin-bottom: 24px;
 }

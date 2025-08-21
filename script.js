@@ -1,27 +1,26 @@
-
-let pokemonLoad = []
+let pokemonLoad = [];
 let mainType = [];
 let offset = 0;
 async function init() {
-  await onloadFunc();
+  loadingSpinner();
+  await onloadFunc((limit = 20), offset);
 }
 
 async function onloadFunc(limit, offset) {
   const startIndex = pokemonLoad.length;
-  let details = await getAllPokemonDetails(limit = 20, offset);
-  
-  pokemonLoad.push(...details)
-  console.log(pokemonLoad);   //muss zum schluss entfernt werden!!!
+  let details = await getAllPokemonDetails((limit = 20), offset);
+  pokemonLoad.push(...details);
+  console.log(pokemonLoad); //muss zum schluss entfernt werden!!!
   renderPokemonCards(startIndex);
 }
 
 async function renderPokemonCards(startIndex = 0) {
   let pokemon = document.getElementById("pokemon_card");
-  
   for (let index = startIndex; index < pokemonLoad.length; index++) {
     setPokemonCardColour(index);
     pokemon.innerHTML += getPokemonCardTemplate(index);
   }
+  loadingSpinner();
 }
 
 async function getAllPokemonDetails(limit = 20, offset) {
@@ -52,6 +51,14 @@ function getTypeClass(typeName) {
 }
 
 async function loadMorePokemon() {
-  offset = offset+20
-await  onloadFunc(limit = 20, offset);
+  offset = offset + 20;
+  await init();
+}
+
+function loadingSpinner() {
+  document.getElementById("loader").classList.toggle("d_none");
+}
+
+function capitalizeFirstLetter(str = "") {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
