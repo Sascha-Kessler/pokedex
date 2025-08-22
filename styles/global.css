@@ -6,8 +6,13 @@
 }
 
 body {
-    background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 40%, #7F1D1D 100%);
-    background-attachment: fixed;
+   min-height: 100vh;
+  background:
+    radial-gradient(900px 420px at 85% 8%, rgba(239,68,68,.18), transparent 60%),
+    radial-gradient(700px 360px at 12% 85%, rgba(59,130,246,.14), transparent 60%),
+    linear-gradient(180deg, #0B0F19 0%, #111827 60%, #0B0F19 100%);
+  background-attachment: fixed;
+  color: #e5e7eb; /* heller Text auf dunkel */
 }
 
 .d_none {
