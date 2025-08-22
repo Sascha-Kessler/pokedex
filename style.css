@@ -13,3 +13,19 @@
 .load_more_btn {
     margin-bottom: 24px;
 }
+
+#overlay {
+    position: fixed;
+    inset: 0;                  
+    background: rgba(0,0,0,.45);
+    z-index: 999; 
+}
+
+#overlayCard {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* exakt mittig */
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.401);
+}

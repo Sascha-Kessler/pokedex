@@ -18,6 +18,9 @@
         <section id="pokemon_card" class="pokemon_cards_section">
             
         </section>
+        <div id="overlay" class="d_none" onclick="closeOverlay()">
+                <div id="overlayCard"  onclick="event.stopPropagation()"></div>
+            </div>
         <button class="load_more_btn" onclick="loadMorePokemon()">Mehr Pokemon!</button>
         <div id="loader" class="d_none"></div>
     </main>

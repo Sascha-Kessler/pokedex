@@ -17,6 +17,7 @@
     width: 230px;
     gap: 50px;
     padding-top: 24px;
+    cursor: pointer;
 }
 
 .pokemon_card_header {

@@ -2,6 +2,11 @@
     margin: 0;
 }
 
+body {
+    background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 40%, #7F1D1D 100%);
+    background-attachment: fixed;
+}
+
 .d_none {
     display: none;
 }
