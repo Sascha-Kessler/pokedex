@@ -1,4 +1,4 @@
-function removeOverlayPokemonCards(index) {
+function openOverlayPokemonCards(index) {
   document.getElementById('overlay').classList.remove('d_none');
   let pokemonOverlay = document.getElementById('overlayCard');
   pokemonOverlay.innerHTML = getPokemonCardOverlayTemplate(index); 
@@ -11,3 +11,8 @@ function closeOverlay() {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeOverlay();
 });
+
+function navigateOverlayPokemon(index , count) {
+    let newIndex = index + count;
+    document.getElementById('overlayCard').innerHTML = getPokemonCardOverlayTemplate(newIndex)
+}

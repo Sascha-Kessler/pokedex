@@ -1,5 +1,5 @@
 function getPokemonCardTemplate(index){
-   return `<div class="pokemon_card pokemon_type_${mainType}" onclick="removeOverlayPokemonCards(${index})">
+   return `<div class="pokemon_card pokemon_type_${mainType}" onclick="openOverlayPokemonCards(${index})">
             <div class="pokemon_card_header">
                 <div>#${pokemonLoad[index].id}</div>
                 <div>${capitalizeFirstNameLetter(pokemonLoad[index].name)}</div>
@@ -17,6 +17,9 @@ function getPokemonCardOverlayTemplate(index) {
                 <div>${capitalizeFirstNameLetter(pokemonLoad[index].name)}</div>
             </div>
             <img src="${pokemonLoad[index].sprites.front_default}" alt="">
-            <div>Pokemon Stats</div>
+            <div>
+                <button onclick="navigateOverlayPokemon(${index}, 1)">Catch next</button>
+                <button onclick="navigateOverlayPokemon(${index}, -1)">Catch previous</button>
+            </div>
         </div>`
 }
