@@ -1,0 +1,105 @@
+.poke_btn--circle{
+  --size: 56px;
+  --ring: #0b0f19;                 
+  --red:  #e53935;                  
+  --white:#ffffff;                  
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  position: relative;
+  border: 3px solid var(--ring);
+  background:
+  
+    linear-gradient(180deg, var(--red) 0 48%, #0f0f10 48% 52%, var(--white) 52% 100%);
+  box-shadow:
+    0 8px 24px -10px rgba(0,0,0,.55),
+    0 0 0 2px rgba(255,255,255,.06) inset;
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.poke_btn--circle::after{
+  content:"";
+  position:absolute; left:50%; top:50%;
+  transform: translate(-50%,-50%);
+  width: calc(var(--size) * .42);
+  height: calc(var(--size) * .42);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff 0%, #e9e9e9 60%, #d0d0d0 100%);
+  border: 3px solid var(--ring);
+  box-shadow: 0 0 0 2px #ffffff inset;
+  pointer-events: none;
+}
+
+.poke_btn--circle:hover{
+  transform: translateY(-2px) rotate(-6deg);
+  box-shadow:
+    0 16px 36px -12px rgba(0,0,0,.65),
+    0 0 0 2px rgba(255,255,255,.09) inset;
+}
+.poke_btn--circle:active{ transform: translateY(0) scale(.96); }
+.poke_btn--circle:focus-visible{ outline: 3px solid rgba(59,130,246,.8); outline-offset: 3px; }
+
+.poke_btn{
+  --h: 44px;                    
+  --glow: 239,68,68;            
+  position: relative;
+  display: inline-flex; align-items: center; gap: .65rem;
+  height: var(--h); padding: 0 1rem 0 .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--glow), .45);
+  color: #0b1220; font-weight: 700;
+  background:
+    radial-gradient(900px 400px at 120% -20%, rgba(255,255,255,.25), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f6f7fb 60%, #e9ebf2 100%);
+  box-shadow:
+    0 10px 28px -12px rgba(var(--glow), .55),
+    0 1px 0 rgba(255,255,255,.8) inset;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.poke_btn::before{
+  content:"";
+  flex: 0 0 calc(var(--h) * .64);
+  width: calc(var(--h) * .64); height: calc(var(--h) * .64);
+  border-radius: 50%;
+  border: 2px solid #0b0f19;
+  background:
+    linear-gradient(180deg, #e53935 0 48%, #0f0f10 48% 52%, #ffffff 52% 100%);
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.35) inset,
+    0 0 0 1px rgba(255,255,255,.3) inset;
+}
+
+.poke_btn::after{
+  content:"";
+  position: absolute; left: calc(.9rem + var(--h)*.32); 
+  width: calc(var(--h) * .26); height: calc(var(--h) * .26);
+  transform: translateX(-50%);
+  top: 50%; margin-top: calc(var(--h) * -.13);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #e4e4e4 60%, #cfcfcf 100%);
+  border: 2px solid #0b0f19;
+  box-shadow: 0 0 0 1px #fff inset;
+  pointer-events: none;
+}
+
+.poke_btn:hover{
+  transform: translateY(-1px);
+  box-shadow:
+    0 16px 36px -14px rgba(var(--glow), .65),
+    0 1px 0 rgba(255,255,255,1) inset;
+}
+.poke_btn:active{ transform: translateY(0) scale(.98); }
+
+.poke_btn:focus-visible{ outline: 3px solid rgba(59,130,246,.8); outline-offset: 3px; }
+
+.pokemon_card .poke_btn{ --glow: var(--type-rgb); }
+
+.poke_btn[disabled]{
+  filter: grayscale(.6) opacity(.7);
+  cursor: not-allowed;
+}

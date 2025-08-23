@@ -1,11 +1,13 @@
 function openOverlayPokemonCards(index) {
   document.getElementById('overlay').classList.remove('d_none');
   let pokemonOverlay = document.getElementById('overlayCard');
-  pokemonOverlay.innerHTML = getPokemonCardOverlayTemplate(index); 
+  pokemonOverlay.innerHTML = getPokemonCardOverlayTemplate(index);
+  document.body.classList.add('no-scroll'); 
 }
 
 function closeOverlay() {
   document.getElementById('overlay').classList.add('d_none');
+  document.body.classList.remove('no-scroll');
 }
 
 document.addEventListener('keydown', (e) => {

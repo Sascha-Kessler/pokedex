@@ -12,9 +12,13 @@ body {
     radial-gradient(700px 360px at 12% 85%, rgba(59,130,246,.14), transparent 60%),
     linear-gradient(180deg, #0B0F19 0%, #111827 60%, #0B0F19 100%);
   background-attachment: fixed;
-  color: #e5e7eb; /* heller Text auf dunkel */
+  color: #e5e7eb; 
 }
 
 .d_none {
     display: none !important;
+}
+
+.no-scroll {
+    overflow: hidden !important;  
 }

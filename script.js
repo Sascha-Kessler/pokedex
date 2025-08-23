@@ -1,17 +1,19 @@
 let pokemonLoad = [];
 let mainType = [];
 let offset = 0;
-async function init() {
+let pokemonTypes = [];
+async function init(limit = 20, offset = 0) {
   loadingSpinner();
-  await onloadFunc((limit = 20), offset);
+  await onloadFunc(limit, offset);
 }
 
-async function onloadFunc(limit, offset) {
+async function onloadFunc(limit = 20, offset = 0) {
   const startIndex = pokemonLoad.length;
-  let details = await getAllPokemonDetails((limit = 20), offset);
+  let details = await getAllPokemonDetails(limit, offset);
   pokemonLoad.push(...details);
   console.log("pokemonLoadArray:",pokemonLoad); //muss zum schluss entfernt werden!!!
   renderPokemonCards(startIndex);
+  showPokemonType()
 }
 
 function setPokemonCardColour(index) {
@@ -29,7 +31,7 @@ function getTypeClass(typeName) {
 
 async function loadMorePokemon() {
   offset = offset + 20;
-  await init();
+  await init(limit = 20, offset);
 }
 
 function loadingSpinner() {
@@ -39,5 +41,3 @@ function loadingSpinner() {
 function capitalizeFirstNameLetter(str = "") {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
-
-

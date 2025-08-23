@@ -5,21 +5,21 @@ function getPokemonCardTemplate(index){
                 <div>${capitalizeFirstNameLetter(pokemonLoad[index].name)}</div>
             </div>
             <img src="${pokemonLoad[index].sprites.front_default}" alt="">
-            <div>Pokemon Stats</div>
+            <div>${capitalizeFirstNameLetter(pokemonLoad[index].types[0].type.name)}</div>
         </div>`
 }
 
 function getPokemonCardOverlayTemplate(index) {
     setPokemonCardColour(index);
-    return `<div class="pokemon_card pokemon_type_${mainType}">
+    return `<div class="pokemon_card pokemon_card_overlay pokemon_type_${mainType}">
             <div class="pokemon_card_header">
                 <div>#${pokemonLoad[index].id}</div>
                 <div>${capitalizeFirstNameLetter(pokemonLoad[index].name)}</div>
             </div>
             <img src="${pokemonLoad[index].sprites.front_default}" alt="">
-            <div>
-                <button onclick="navigateOverlayPokemon(${index}, 1)">Catch next</button>
-                <button onclick="navigateOverlayPokemon(${index}, -1)">Catch previous</button>
+            <div class="overlay_navigation_btn_container">
+                <button class="poke_btn" onclick="navigateOverlayPokemon(${index}, -1)">Catch previous</button>
+                <button class="poke_btn" onclick="navigateOverlayPokemon(${index}, 1)">Catch next</button>
             </div>
         </div>`
 }
