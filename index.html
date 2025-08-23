@@ -19,7 +19,7 @@
   <body onload="init()">
     <header>
         <h1 class="header">MY POKEDEX</h1>
-        <input type="text" oninput="filterByName(event)">
+        <input id="search_field" type="text" placeholder="Search Pokemon..." oninput="filterByName(event)">
       </header>
 
     <main id="content">
@@ -27,7 +27,7 @@
       <div id="overlay" class="d_none" onclick="closeOverlay()">
         <div id="overlayCard" onclick="event.stopPropagation()"></div>
       </div>
-      <button class="load_more_btn poke_btn" onclick="loadMorePokemon()">
+      <button id="more_pokemon_btn" class="load_more_btn poke_btn" onclick="loadMorePokemon()">
         Give me MORE Pokemon!!!
       </button>
       <div id="wrapper" class="d_none">
