@@ -13,7 +13,6 @@ async function onloadFunc(limit = 20, offset = 0) {
   pokemonLoad.push(...details);
   console.log("pokemonLoadArray:",pokemonLoad); //muss zum schluss entfernt werden!!!
   renderPokemonCards(startIndex);
-  showPokemonType()
 }
 
 function setPokemonCardColour(index) {
@@ -40,4 +39,12 @@ function loadingSpinner() {
 
 function capitalizeFirstNameLetter(str = "") {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function filterByName(event) {
+  const searchTerm = event.target.value
+  pokemonLoad.filter(name => {
+    return pokemonLoad.name.includes(searchTerm)
+  })
+
 }

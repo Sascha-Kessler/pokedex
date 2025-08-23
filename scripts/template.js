@@ -18,8 +18,8 @@ function getPokemonCardOverlayTemplate(index) {
             </div>
             <img src="${pokemonLoad[index].sprites.front_default}" alt="">
             <div class="overlay_navigation_btn_container">
-                <button class="poke_btn" onclick="navigateOverlayPokemon(${index}, -1)">Catch previous</button>
-                <button class="poke_btn" onclick="navigateOverlayPokemon(${index}, 1)">Catch next</button>
+                <button id="previous_btn" class="poke_btn" onclick="navigateOverlayPokemon(${index}, -1)">Catch previous</button>
+                <button id="next_btn" class="poke_btn" onclick="navigateOverlayPokemon(${index}, 1)">Catch next</button>
             </div>
         </div>`
 }
