@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./styles/pokemon_cards_style.css" />
-    <link rel="stylesheet" href="./styles/loading_spinner.css">
-    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/loading_spinner.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
 
     <script src="./scripts/db.js"></script>
     <script src="./scripts/render.js"></script>
@@ -18,16 +18,25 @@
   </head>
   <body onload="init()">
     <header>
-        <h1 class="header">MY POKEDEX</h1>
-        <input id="search_field" type="text" placeholder="Search Pokemon..." oninput="filterByName(event)">
-      </header>
+      <h1 class="header">MY POKEDEX</h1>
+      <input
+        id="search_field"
+        type="text"
+        placeholder="Search Pokemon..."
+        oninput="filterByName(event)"
+      />
+    </header>
 
     <main id="content">
       <section id="pokemon_card" class="pokemon_cards_section"></section>
       <div id="overlay" class="d_none" onclick="closeOverlay()">
         <div id="overlayCard" onclick="event.stopPropagation()"></div>
       </div>
-      <button id="more_pokemon_btn" class="load_more_btn poke_btn" onclick="loadMorePokemon()">
+      <button
+        id="more_pokemon_btn"
+        class="load_more_btn poke_btn"
+        onclick="loadMorePokemon()"
+      >
         Give me MORE Pokemon!!!
       </button>
       <div id="wrapper" class="d_none">
