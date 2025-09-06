@@ -2,6 +2,7 @@ let pokemonLoad = [];
 let mainType = [];
 let offset = 0;
 let pokemonTypes = [];
+
 async function init(limit = 20, offset = 0) {
   loadingSpinner();
   await onloadFunc(limit, offset);
@@ -48,6 +49,7 @@ async function filterByName(event) {
     filterListByName(event);
     document.getElementById("more_pokemon_btn").classList.add("d_none");
   } else {
+    document.getElementById("pokemon_card").innerHTML = "";
     renderPokemonCards();
     loadingSpinner();
     document.getElementById("more_pokemon_btn").classList.remove("d_none");
