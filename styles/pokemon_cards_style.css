@@ -176,3 +176,9 @@
 .pokemon_overlay_img {
   height: 250px !important;
 }
+
+.type_badge{
+  
+  height: 30px !important;
+  aspect-ratio: 2/1 !important;
+}

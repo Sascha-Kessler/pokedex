@@ -8,8 +8,10 @@ function getPokemonCardTemplate(index) {
             </div>
             <img src="${pokemonLoad[index].sprites.front_default}" alt="pokemon sprite">
             <div>
-              <div>${capitalizeFirstNameLetter(type[0])}</div>   
-              <div>${capitalizeFirstNameLetter(type[1])}</div> 
+                ${pokemonLoad[index].types.map(t =>`
+                    <img src="${typeBadges[t.type.name]}" alt="${t.type.name} badge" class="type_badge">
+                `).join("")}
+              
             </div>
         </div>`;
 }
