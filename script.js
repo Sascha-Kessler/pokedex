@@ -1,5 +1,6 @@
 let pokemonLoad = [];
 let mainType = [];
+let type = [];
 let offset = 0;
 let pokemonTypes = [];
 
@@ -17,16 +18,15 @@ async function onloadFunc(limit = 20, offset = 0) {
 }
 
 function setPokemonCardColour(index) {
-  if (pokemonLoad.length > 0) {
-    mainType = pokemonLoad[index].types[0].type.name;
-  } else {
-    mainType = "normal";
-  }
-  getTypeClass(mainType);
+  mainType = pokemonLoad[index].types[0].type.name;
 }
 
-function getTypeClass(typeName) {
-  return `pokemon_type_${typeName}`;
+function pokemonClass(index) {
+  type = [];
+  let types = pokemonLoad[index].types
+  for (let index = 0; index < types.length; index++) {
+   type.push(types[index].type.name)
+  }
 }
 
 async function loadMorePokemon() {

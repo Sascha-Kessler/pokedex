@@ -36,3 +36,8 @@
     margin-top: 30px;
     border-radius: 12px;
 }
+
+.input_container {
+    display: flex;
+    justify-content: flex-end;
+}

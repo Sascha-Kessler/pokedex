@@ -2,8 +2,7 @@ function renderPokemonCards(startIndex = 0) {
   let pokemon = document.getElementById("pokemon_card");
   
   for (let index = startIndex; index < pokemonLoad.length; index++) {
-    setPokemonCardColour(index);
-    pokemon.innerHTML += getPokemonCardTemplate(index);
+    pokemon.innerHTML += getPokemonCardTemplate(index); 
   }
   loadingSpinner();
 }
