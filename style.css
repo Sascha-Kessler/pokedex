@@ -12,6 +12,8 @@
 
 .load_more_btn {
     margin-bottom: 24px;
+    margin-left: 32px;
+    margin-right: 32px;
 }
 
 #overlay {
@@ -38,6 +40,8 @@
 }
 
 .input_container {
+    max-width: 1440px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin: auto;
 }

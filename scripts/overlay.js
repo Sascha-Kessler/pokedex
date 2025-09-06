@@ -29,3 +29,9 @@ function hideNavigateBtn(index) {
   prevBtn.classList.toggle("d_none", index === 0); // class dnone und force index===0 wenn force true dann dnone hinzufügen, force false dnone entfernen
   nextBtn.classList.toggle("d_none", index === pokemonLoad.length - 1);
 }
+
+function toggleDNone(id) {
+  document.getElementById('pokemon_stat_section').classList.add("d_none");
+  document.getElementById('pokemon_moves_section').classList.add("d_none");
+   document.getElementById(id).classList.toggle("d_none");
+}

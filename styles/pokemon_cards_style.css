@@ -8,7 +8,7 @@
 }
 
 .pokemon_card_overlay {
-  height: 600px !important;
+  height: 900px !important;
   width: 500px !important;
   justify-content: space-between !important;
 }
@@ -26,11 +26,10 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-
-  height: 325px;
-  width: 230px;
+  width: 280px;
   gap: 50px;
   padding-top: 24px;
+  padding-bottom: 24px;
   cursor: pointer;
 
   position: relative;
@@ -173,3 +172,7 @@
 .pokemon_card.pokemon_type_shadow {
   --type-rgb: 94, 58, 126;
 } 
+
+.pokemon_overlay_img {
+  height: 250px !important;
+}
