@@ -7,7 +7,15 @@
 }
 
 .header{
+    margin-top: 54px;
     text-align: center;
+    font-size: 96px;
+    color: #ffcc00;
+    text-shadow: 
+    -3px -3px 0 #2a75bb,
+     3px -3px 0 #2a75bb,
+    -3px  3px 0 #2a75bb,
+     3px  3px 0 #2a75bb;
 }
 
 .load_more_btn {
