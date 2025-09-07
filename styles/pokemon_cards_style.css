@@ -18,7 +18,8 @@
   flex-direction: row;
   gap: 24px;
   padding-bottom: 24px;
-
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .pokemon_card {
@@ -103,6 +104,7 @@
   align-items: center;
   gap: 12px;
   font-weight: 700;
+  font-size: 16px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
@@ -110,7 +112,6 @@
     height: 153px;
     aspect-ratio: 1/1;
 }
-
 
 .pokemon_card.pokemon_type_normal {
   --type-rgb: 168, 167, 122;
@@ -181,4 +182,17 @@
   
   height: 30px !important;
   aspect-ratio: 2/1 !important;
+}
+
+.pokemon_detail_infos {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.pokemon_weight_height {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

@@ -13,7 +13,6 @@ async function onloadFunc(limit = 20, offset = 0) {
   const startIndex = pokemonLoad.length;
   let details = await getAllPokemonDetails(limit, offset);
   pokemonLoad.push(...details);
-  console.log("pokemonLoadArray:", pokemonLoad); //muss zum schluss entfernt werden!!!
   renderPokemonCards(startIndex);
 }
 

@@ -41,9 +41,9 @@
 }
 
 #search_field {
-    width: 250px;
     margin-bottom: 30px;
     margin-top: 30px;
+    padding: 12px;
     border-radius: 12px;
 }
 

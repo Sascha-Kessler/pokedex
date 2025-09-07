@@ -26,7 +26,7 @@ function navigateOverlayPokemon(index, step) {
 function hideNavigateBtn(index) {
   let prevBtn = document.getElementById("previous_btn");
   let nextBtn = document.getElementById("next_btn");
-  prevBtn.classList.toggle("d_none", index === 0); // class dnone und force index===0 wenn force true dann dnone hinzufügen, force false dnone entfernen
+  prevBtn.classList.toggle("d_none", index === 0);
   nextBtn.classList.toggle("d_none", index === pokemonLoad.length - 1);
 }
 

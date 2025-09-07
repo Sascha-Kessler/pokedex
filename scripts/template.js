@@ -26,7 +26,7 @@ function getPokemonCardOverlayTemplate(index) {
                 )}</div>
             </div>
             <img class="pokemon_overlay_img" src="${pokemonLoad[index].sprites.front_default}" alt="pokemon sprite">
-            <div>
+            <div class="pokemon_weight_height">
             <div>WEIGHT: ${pokemonLoad[index].weight} KG</div>
             <div>HEIGHT: ${pokemonLoad[index].height} m</div>
             </div>
@@ -34,15 +34,15 @@ function getPokemonCardOverlayTemplate(index) {
                 <button class="overlay_details_btn" onclick="toggleDNone('pokemon_stat_section')">Stats</button>
                 <button class="overlay_details_btn" onclick="toggleDNone('pokemon_moves_section')">Moves</button>
             </div>
-            <div id="pokemon_stat_section" class="d_none">
-                <div>${pokemonLoad[index].stats[0].stat.name.toUpperCase()}: ${pokemonLoad[index].stats[0].base_stat}</div>
-                <div>${pokemonLoad[index].stats[1].stat.name.toUpperCase()}: ${pokemonLoad[index].stats[1].base_stat}</div>
-                <div>${pokemonLoad[index].stats[2].stat.name.toUpperCase()}: ${pokemonLoad[index].stats[2].base_stat}</div>
-                <div>${pokemonLoad[index].stats[3].stat.name.toUpperCase()}: ${pokemonLoad[index].stats[3].base_stat}</div>
-                <div>${pokemonLoad[index].stats[4].stat.name.toUpperCase()}: ${pokemonLoad[index].stats[4].base_stat}</div>
-                <div>${pokemonLoad[index].stats[5].stat.name.toUpperCase()}: ${pokemonLoad[index].stats[5].base_stat}</div>
+            <div class="pokemon_detail_infos" id="pokemon_stat_section" >
+                <div>${pokemonLoad[index].stats[0].stat.name.toUpperCase()}: <br>${pokemonLoad[index].stats[0].base_stat}</div>
+                <div>${pokemonLoad[index].stats[1].stat.name.toUpperCase()}: <br>${pokemonLoad[index].stats[1].base_stat}</div>
+                <div>${pokemonLoad[index].stats[2].stat.name.toUpperCase()}: <br>${pokemonLoad[index].stats[2].base_stat}</div>
+                <div>${pokemonLoad[index].stats[3].stat.name.toUpperCase()}: <br>${pokemonLoad[index].stats[3].base_stat}</div>
+                <div>${pokemonLoad[index].stats[4].stat.name.toUpperCase()}: <br>${pokemonLoad[index].stats[4].base_stat}</div>
+                <div>${pokemonLoad[index].stats[5].stat.name.toUpperCase()}: <br>${pokemonLoad[index].stats[5].base_stat}</div>
             </div>
-            <div id="pokemon_moves_section" class="d_none">
+            <div class="pokemon_detail_infos d_none" id="pokemon_moves_section" >
                 <div>${pokemonLoad[index].moves[0].move.name.toUpperCase()}</div>
                 <div>${pokemonLoad[index].moves[1].move.name.toUpperCase()}</div>
                 <div>${pokemonLoad[index].moves[2].move.name.toUpperCase()}</div>
