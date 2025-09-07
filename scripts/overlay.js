@@ -17,7 +17,6 @@ document.addEventListener("keydown", (e) => {
 
 function navigateOverlayPokemon(index, step) {
   let newIndex = index + step;
-  console.log(newIndex, index);
   document.getElementById("overlayCard").innerHTML =
     getPokemonCardOverlayTemplate(newIndex);
   hideNavigateBtn(newIndex);

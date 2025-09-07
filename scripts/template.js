@@ -19,6 +19,7 @@ function getPokemonCardTemplate(index) {
 function getPokemonCardOverlayTemplate(index) {
   setPokemonCardColour(index);
   return `<div class="pokemon_card pokemon_card_overlay pokemon_type_${mainType}">
+            <button class="overlay_details_btn overlay_close_btn" onclick="closeOverlay()">X</button>
             <div class="pokemon_card_header">
                 <div>#${pokemonLoad[index].id}</div>
                 <div id="pokemon_name">${capitalizeFirstNameLetter(

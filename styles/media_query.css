@@ -23,6 +23,7 @@
 @media (max-width: 350px) {
     .pokemon_card {
         width: 220px;
+        height: 400px;
     }
 }
 
